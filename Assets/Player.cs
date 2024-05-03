@@ -32,9 +32,10 @@ public class Rörelse : MonoBehaviour
         {
             myRigidbody.AddForce(new Vector3(0, 0, -20));
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
             myRigidbody.AddForce(new Vector3(0, 10, 0), ForceMode.Impulse);
+            StartCoroutine(CoolDown(3));
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
